@@ -1,1 +1,14 @@
-<p>list works!</p>
+<h1>Listado de productos</h1>
+<mat-divider></mat-divider>
+<br>
+
+<div class="card-box">
+    <div class="card_container"
+    *ngFor="let product of products">
+    <app-product-card [product]="product"></app-product-card>
+    
+    </div>
+
+</div>
+
+

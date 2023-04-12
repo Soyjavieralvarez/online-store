@@ -1,0 +1,24 @@
+<mat-card class="mat-card">
+    <mat-card-header>
+        <mat-card-title> {{product.name}} </mat-card-title>
+        <mat-card-subtitle>{{product.type}}</mat-card-subtitle>
+        <mat-card-subtitle>{{product.price}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <img class="img" mat-card-image [src]="product | image">
+
+    <mat-card-content>
+        <h4><strong>Color mostrado: {{ product.color }}</strong></h4>
+        <br>
+        <strong>Tallas disponible: {{ product.size }}</strong>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <button mat-button color="accent">
+            Leer descripción
+        </button>
+        <button mat-button color="accent">
+            Editar
+        </button>
+    </mat-card-actions>
+</mat-card>
