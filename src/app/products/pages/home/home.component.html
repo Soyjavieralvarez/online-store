@@ -1,6 +1,41 @@
-<mat-drawer-container fullscreen>
-    <mat-sidenav #sidenav>
-        <h1>Sidenav</h1>
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav mode="push">
+       
+        <mat-toolbar color="primary">
+            <span>Menú</span>
+            <span class="spacer"></span>
+        <button mat-icon-button
+            (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+    </mat-toolbar>
+
+    
+    <mat-list>
+       <a routerLink="./list"
+       mat-list-item
+       (click)="sidenav.toggle()">
+       <mat-icon matListItemIcon fontIcon="label"></mat-icon>
+        <span>Listado de productos</span>
+       </a>
+
+       <a routerLink="./add"
+       mat-list-item
+       (click)="sidenav.toggle()">
+       <mat-icon matListItemIcon fontIcon="add"></mat-icon>
+        <span>Añadir producto</span>
+       </a>
+
+       <a routerLink="./search"
+       mat-list-item
+       (click)="sidenav.toggle()">
+       <mat-icon matListItemIcon fontIcon="search"></mat-icon>
+        <span>Buscar producto</span>
+       </a>
+
+      </mat-list>
+    
     </mat-sidenav>
 
     <mat-toolbar>
@@ -8,5 +43,15 @@
             (click)="sidenav.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
+        <span class="spacer"></span>
+        <button mat-button>
+            Logout
+        </button>
     </mat-toolbar>
-</mat-drawer-container>
+
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+
+    
+</mat-sidenav-container>
