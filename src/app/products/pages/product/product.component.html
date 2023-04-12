@@ -1,3 +1,38 @@
-<p>product works!</p>
+<mat-grid-list cols="1" *ngIf="!product; else divProduct">
+    <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #divProduct>
+   <div class="product-box">
+    <div>
+        <h1>{{product.name}}</h1>
+        <mat-divider></mat-divider>
+        <br>
+        <img class="img" [src]=" product | image">
+        
+    </div>
+
+    <div>
+        <h2>{{product.type}}</h2>
+        <mat-divider></mat-divider>
+        <br>
+        <h3>{{product.price}}</h3>
+        <h4>Color: {{product.color}}</h4>
+        <h2> Tallas disponibles 
+            <br>
+            {{product.size}}</h2>
+            <p class="text_description">{{product.description}}</p>
+            <br>
+            <button
+                mat-button
+                color="accent"
+                (click)="goBack()">
+                Regresar
+            </button>
+    </div>
+   </div>
+</ng-template>
 
 

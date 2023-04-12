@@ -1,0 +1,38 @@
+.product-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap:30px;
+};
+
+.img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.text_description{
+    // border: solid 1px white;
+    width: 20%;
+}
+
+// Media queries mobile and tablet
+
+@media (max-width: 767px) //Mobile
+{
+    .product-box{
+    flex-direction: column;
+}
+
+.text_description{
+    // border: solid 1px white;
+    width: 100%;
+}
+
+}
+
+@media (min-width: 768px) and (max-width: 1023px) //Tablet
+{
+    .product-box{
+     flex-direction: column;
+}
+  }

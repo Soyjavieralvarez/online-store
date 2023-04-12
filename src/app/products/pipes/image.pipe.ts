@@ -8,8 +8,6 @@ export class ImagePipe implements PipeTransform {
 
   transform( product: Product,): string {
     return `assets/products/${ product.id }.jpg`;
-
-    //assets/products/Nike Air Max Flyknit Racer.jpg
   }
 
 }
