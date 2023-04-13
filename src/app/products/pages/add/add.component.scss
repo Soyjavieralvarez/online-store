@@ -1,0 +1,17 @@
+.add-box{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    gap:40px;
+    // justify-content: space-around;
+}
+
+.add_form{
+    // border: solid 2px white;
+    display: flex;
+    flex-direction: column;
+    width:50%;
+    gap:10px;
+
+    
+}
