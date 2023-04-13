@@ -4,6 +4,7 @@ import { switchMap } from 'rxjs/operators'
 
 import { Product } from '../../interfaces/interfaces';
 import { ProductsService } from '../../services/products.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -31,7 +32,8 @@ export class AddComponent implements OnInit{
 
   constructor( private productsService: ProductsService,
                 private activatedRoute: ActivatedRoute,
-                private router: Router) {}
+                private router: Router,
+                private snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
 
@@ -56,12 +58,14 @@ export class AddComponent implements OnInit{
       this.productsService.updateProduct( this.product )
       .subscribe( resp => {
         this.router.navigate(['/products']);
+        this.showSnackBar('Se ha actualizado el producto correctamente')
       } )
     } else {
       //Create
       this.productsService.addProduct(this.product)
       .subscribe( product => {
         this.router.navigate([ '/products/', product.id ]);
+        this.showSnackBar('Has añadido un producto nuevo')
       })
     }
     }
@@ -71,5 +75,11 @@ export class AddComponent implements OnInit{
       .subscribe( resp => {
         this.router.navigate(['/products']);
       } )
+    }
+
+    showSnackBar( message : string):void {
+      this.snackBar.open(message, '¡Terminado, bien hecho!',{
+        duration:5000
+      });
     }
   }
