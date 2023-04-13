@@ -7,6 +7,7 @@
         <mat-label>Nombre del producto</mat-label>
         <input matInput
         type="text"
+        [(ngModel)]="product.name"
         required
             >
     </mat-form-field>
@@ -15,6 +16,7 @@
         <mat-label>Tallas</mat-label>
         <input matInput
         type="number"
+        [(ngModel)]="product.size"
         required
             >
     </mat-form-field>
@@ -22,6 +24,7 @@
         <mat-label>Precio</mat-label>
         <input matInput
         type="number"
+        [(ngModel)]="product.price"
         required
             >
     </mat-form-field>
@@ -29,6 +32,7 @@
         <mat-label>Color disponible</mat-label>
         <input matInput
         type="text"
+        [(ngModel)]="product.color"
         required
             >
     </mat-form-field>
@@ -36,6 +40,7 @@
         <mat-label>Tipo de producto</mat-label>
         <input matInput
         type="text"
+        [(ngModel)]="product.type"
         required
             >
     </mat-form-field>
@@ -43,18 +48,23 @@
         <mat-label>Descripción del producto</mat-label>
         <input matInput
         type="text"
+        [(ngModel)]="product.description"
         required
             >
     </mat-form-field>
+    
     <mat-form-field color="accent">
         <mat-label>Foto URL</mat-label>
         <input matInput
         type="url"
+        [(ngModel)]="product.alt_img"
         required
             >
     </mat-form-field>
+
     <button mat-raised-button
-    color="accent">
+    color="accent"
+    (click)="save()">
     <mat-icon>edit</mat-icon>
         Añadir producto
     </button>

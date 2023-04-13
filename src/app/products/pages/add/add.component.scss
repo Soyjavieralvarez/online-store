@@ -1,17 +1,57 @@
 .add-box{
     display: flex;
     flex-direction: row;
+    justify-content:center;
+    align-items: center;
     width:100%;
-    gap:40px;
-    // justify-content: space-around;
+    gap:50px;
 }
 
 .add_form{
-    // border: solid 2px white;
     display: flex;
     flex-direction: column;
     width:50%;
     gap:10px;
-
-    
 }
+
+
+
+// Media queries mobile and tablet
+
+@media (max-width: 767px) //Mobile
+{
+    .add-box{
+        display: flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items: center;
+        width:100%;
+        gap:20px;
+    }
+    
+    .add_form{
+        display: flex;
+        flex-direction: column;
+        width:50%;
+        gap:10px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) //Tablet
+{
+    .add-box{
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        width:100%;
+        gap:40px;
+    }
+    
+    .add_form{
+        display: flex;
+        flex-direction: column;
+        width:50%;
+        gap:10px;
+    }
+  }

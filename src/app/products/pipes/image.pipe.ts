@@ -7,7 +7,17 @@ import { Product } from '../interfaces/interfaces';
 export class ImagePipe implements PipeTransform {
 
   transform( product: Product,): string {
-    return `assets/products/${ product.id }.jpg`;
+
+    if(!product.id && !product.alt_img) {
+      return 'assets/no-image.png';
+    } else if (product.alt_img) {
+      return product.alt_img;
+    } else {
+      return `assets/products/${ product.id }.jpg`;
+    }
+
+
+    
   }
 
 }

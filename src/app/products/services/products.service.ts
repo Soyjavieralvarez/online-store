@@ -24,4 +24,12 @@ export class ProductsService {
   getSuggestions( term: string):Observable<Product[]> {
     return this.http.get<Product[]>(`${ this.baseURL }/products?q=${term}&_limit=10`);
   }
+
+  addProduct(product : Product):Observable<Product> {
+    return this.http.post<Product>(`${ this.baseURL}/products`, product);
+  }
+
+  updateProduct(product : Product):Observable<Product> {
+    return this.http.put<Product>(`${ this.baseURL}/products/${ product.id }`, product);
+  }
 }
