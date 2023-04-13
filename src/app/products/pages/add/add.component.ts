@@ -63,4 +63,11 @@ export class AddComponent implements OnInit{
       })
     }
     }
+
+    deleteProduct() {
+      this.productsService.deleteProduct( this.product.id! )
+      .subscribe( resp => {
+        this.router.navigate(['/products']);
+      } )
+    }
   }

@@ -15,7 +15,7 @@
     <mat-form-field color="accent">
         <mat-label>Tallas</mat-label>
         <input matInput
-        type="number"
+        type="text"
         [(ngModel)]="product.size"
         required
             >
@@ -62,12 +62,23 @@
             >
     </mat-form-field>
 
+    <div class="button">
     <button mat-raised-button
     color="accent"
     (click)="save()">
     <mat-icon>edit</mat-icon>
-        Añadir producto
+        Guardar
     </button>
+
+    <button *ngIf="product.id"
+    mat-raised-button
+    (click)="deleteProduct()"
+    color="warn"
+    >
+    <mat-icon>delete</mat-icon>
+        Borrar
+    </button>
+    </div>
 </div>
 <div>
     <img [src]=" product | image">
