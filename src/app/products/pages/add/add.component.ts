@@ -54,12 +54,14 @@ export class AddComponent implements OnInit{
     if ( this.product.id) {
       //Update
       this.productsService.updateProduct( this.product )
-      .subscribe( product => console.log('Updating', product))
+      .subscribe( resp => {
+        this.router.navigate(['/products']);
+      } )
     } else {
       //Create
       this.productsService.addProduct(this.product)
       .subscribe( product => {
-        this.router.navigate([ '/products/edit', product.id ]);
+        this.router.navigate([ '/products/', product.id ]);
       })
     }
     }
