@@ -4,9 +4,22 @@
         <mat-divider></mat-divider>
     </div>
     <div>
-<h3>Buscador</h3>
+        <h3>Buscador</h3>
 
-
+        <mat-form-field class="example-full-width">
+            <input type="text"
+                placeholder="Buscador de productos"
+                aria-label="Number"
+                matInput
+                [(ngModel)]="term"
+                [matAutocomplete]="auto"
+                (input)="searching()">
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+              <mat-option *ngFor="let product of products" [value]="product">
+                {{product.name}}
+            </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
 
     </div>
 </div>
