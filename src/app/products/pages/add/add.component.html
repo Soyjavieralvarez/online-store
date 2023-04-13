@@ -1,4 +1,4 @@
-<h1>Añadir un nuevo producto</h1>
+<h1> {{(product.id) ? 'Editar el producto' : 'Añadir nuevo producto' }} </h1>
 <mat-divider></mat-divider>
 <br>
 <div class="add-box">
@@ -67,7 +67,7 @@
     color="accent"
     (click)="save()">
     <mat-icon>edit</mat-icon>
-        Guardar
+    {{(product.id) ? 'Editar' : 'Añadir nuevo producto' }}
     </button>
 
     <button *ngIf="product.id"

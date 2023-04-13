@@ -1,5 +1,12 @@
+.mat-card{
+    // border: solid 2px red;
+    display: flex;
+   justify-content:space-between;
+    height:100%;
+}
+
 .img_container{
-   
+    // border: solid 2px white;
     display: flex;
     justify-content: center;
     align-items: center;

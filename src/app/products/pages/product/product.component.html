@@ -18,13 +18,30 @@
         <h2>{{product.type}}</h2>
         <mat-divider></mat-divider>
         <br>
-        <h3>{{product.price}}</h3>
-        <h4>Color: {{product.color}}</h4>
-        <h2> Tallas disponibles 
-            <br>
+        <div class="product_type">
+        <h2>{{product.price}}€</h2>
+        <h3>Color: {{product.color}}</h3>
+        <h2> Tallas disponibles: 
+            
             {{product.size}}</h2>
-            <p class="text_description">{{product.description}}</p>
+            <h2>
+                Descripción:
+                </h2>
+                <p class="text_description">
+                
+                {{product.description}}</p>
             <br>
+            <p class="text_description">Recogida en tienda</p>
+            <br>
+            <br>
+            <p class="text_description">Devoluciones y entregas gratuitas</p>
+            <br>
+            <p class="text_description">Como Member, tienes envíos gratuitos y devoluciones gratuitas en un plazo de 30 días.</p>
+            <br>
+            <p class="text_description">¡HASTA UN 50% DE DESCUENTO!</p>
+            <br>
+            <p class="text_description">Ya están aquí las ofertas de fin de temporada.</p>
+        </div>
             <button
                 mat-button
                 color="accent"

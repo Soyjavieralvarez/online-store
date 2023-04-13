@@ -13,6 +13,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ListComponent } from './pages/list/list.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ImagePipe } from './pipes/image.pipe';
+import { ConfirmComponent } from './components/confirm/confirm.component';
 
 
 
@@ -28,6 +29,7 @@ import { ImagePipe } from './pipes/image.pipe';
     ListComponent,
     ProductCardComponent,
     ImagePipe,
+    ConfirmComponent,
     
     
     

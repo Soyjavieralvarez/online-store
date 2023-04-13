@@ -1,0 +1,19 @@
+<h2 class="confirm_h1">¿Has pensado bien lo de borrar este producto?</h2>
+<mat-divider></mat-divider>
+<br>
+<p class="confirm_p">
+    Estás a punto de borrar a {{data.name}}.
+</p>
+<br>
+<p class="confirm_p">
+    Piénsalo bien, de verdad. Aquí no existe el ctrl + z.
+</p>
+<br>
+<p class="confirm_p"> 
+    ¿Deseas continuar?
+</p>
+<div class="confirm_button">
+<button mat-button (click)="delete()"  color="warn">¡Si, borrar!</button>
+<button mat-button (click)="close()"   color="accent">No, no, dejálo</button>
+
+</div>

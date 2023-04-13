@@ -39,9 +39,16 @@
     .add_form{
         display: flex;
         flex-direction: column;
-        width:50%;
-        gap:10px;
+        width:100%;
+        gap:5px;
     }
+
+    .button{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    justify-content: space-around;
+}
 }
 
 @media (min-width: 768px) and (max-width: 1023px) //Tablet
@@ -58,7 +65,14 @@
     .add_form{
         display: flex;
         flex-direction: column;
-        width:50%;
+        width:100%;
         gap:10px;
+    }
+
+    .button{
+        display: flex;
+        flex-direction: column;
+        gap:20px;
+        justify-content: space-around;
     }
   }

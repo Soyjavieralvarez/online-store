@@ -5,6 +5,8 @@ import { switchMap } from 'rxjs/operators'
 import { Product } from '../../interfaces/interfaces';
 import { ProductsService } from '../../services/products.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmComponent } from '../../components/confirm/confirm.component';
 
 
 @Component({
@@ -33,7 +35,8 @@ export class AddComponent implements OnInit{
   constructor( private productsService: ProductsService,
                 private activatedRoute: ActivatedRoute,
                 private router: Router,
-                private snackBar: MatSnackBar) {}
+                private snackBar: MatSnackBar,
+                public dialog: MatDialog) {}
 
   ngOnInit(): void {
 
@@ -71,10 +74,24 @@ export class AddComponent implements OnInit{
     }
 
     deleteProduct() {
-      this.productsService.deleteProduct( this.product.id! )
-      .subscribe( resp => {
-        this.router.navigate(['/products']);
-      } )
+
+      const dialog = this.dialog.open(ConfirmComponent, {
+        width:'400px',
+        height: '300px',
+        data: {...this.product}
+      });
+
+      dialog.afterClosed().subscribe(
+        (result) => {
+          if (result) {
+            this.productsService.deleteProduct( this.product.id! )
+            .subscribe( resp => {
+              this.router.navigate(['/products']);
+            } );
+          }
+        }
+      )
+     
     }
 
     showSnackBar( message : string):void {
