@@ -19,6 +19,9 @@ export class ProductsService {
 
   getProductForId( id: string ):Observable<Product> {
     return this.http.get<Product>(`${ this.baseURL}/products/${ id }`);
-    
+  }
+
+  getSuggestions( term: string):Observable<Product[]> {
+    return this.http.get<Product[]>(`${ this.baseURL }/products?q=${term}&_limit=10`);
   }
 }

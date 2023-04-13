@@ -3,10 +3,10 @@
         <h1>Buscador de productos</h1>
         <mat-divider></mat-divider>
     </div>
-    <div>
+    <div class="search">
         <h3>Buscador</h3>
 
-        <mat-form-field class="example-full-width">
+        <mat-form-field color="accent">
             <input type="text"
                 placeholder="Buscador de productos"
                 aria-label="Number"
@@ -14,12 +14,24 @@
                 [(ngModel)]="term"
                 [matAutocomplete]="auto"
                 (input)="searching()">
-            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-autocomplete
+                            autoActiveFirstOption
+                            #auto="matAutocomplete"
+                            (optionSelected)="selectedOption( $event )">
               <mat-option *ngFor="let product of products" [value]="product">
                 {{product.name}}
             </mat-option>
+
+            <mat-option value="" *ngIf="products.length === 0 && term.trim().length > 0">
+                <p color="accent">No se encontró nada con ese término de búsqueda {{term}}</p>
+            </mat-option>
             </mat-autocomplete>
+
         </mat-form-field>
 
     </div>
+<div *ngIf="productSelected">
+    <app-product-card [product]="productSelected"></app-product-card>
 </div>
+</div>
+
