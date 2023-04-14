@@ -1,1 +1,48 @@
-<p>register works!</p>
+<div class="register_form">
+  <h2>Validaciones reactivas</h2>
+  <div class="col">
+    <form autocomplete="off" [formGroup]="myForm" (ngSubmit)="submitForm()">
+      <!---Name-->
+      <div class="form_input">
+        <label class="col-sm-3 col-form-label">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="name"
+          placeholder="Full name"
+        />
+        <span class="form-text text-danger" *ngIf="invalidField('name')">
+          Debes poner tu nombre completo
+        </span>
+      </div>
+
+      <!---Email-->
+      <div class="form_input">
+        <label class="col-sm-3 col-form-label">Email</label>
+        <input type="email" class="form-control" placeholder="User email" formControlName="email" />
+        <span class="form-text text-danger" *ngIf="invalidField('email')">
+            Debes poner un email válido
+          </span>
+      </div>
+
+      <!---Password-->
+      <div class="form_input">
+        <label class="col-sm-3 col-form-label">Password</label>
+        <input type="password" class="form-control" placeholder="Password" />
+      </div>
+
+      <!---Password2-->
+      <div class="form_input">
+        <label>Confirm your password</label>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Confirm your password"
+        />
+      </div>
+      <div class="form_button">
+        <button mat-stroked-button color="accent" type="submit">Crear</button>
+      </div>
+    </form>
+  </div>
+</div>
