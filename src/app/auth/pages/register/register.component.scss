@@ -1,66 +1,65 @@
-.register_form{
-    background-color: #303030;
-   height:100%;
-    color:#69f0ae;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.register_form {
+  background-color: #303030;
+  height: 100%;
+  color: #69f0ae;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    & h2{
-        padding:10px;
-        text-align: center;
-        border-bottom: solid 1px #69f0ae;
-        width: 25%;
-    }
-}
-
-.col{
-    padding:20px;
-    height:50%;
-    width:50%;
-    display: flex;
-    flex-direction: column;
-    padding: 1em;
-    border: 1px solid #69f0ae;
-    border-radius: 1em;
-}
-
-.form_input{
-    // border: solid 2px white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap:10px;
-    width: 100%;
+  & h2 {
+    padding: 10px;
     text-align: center;
-
-    & label{
-        padding:10px;
-        font-size: medium;
-    }
-
-    & input{
-        padding:5px;
-        width: 25%;
-        height: 20%;
-        border-radius: 5px;
-        background-color: 
-        #ffffffc9;
-        border-bottom: solid 1px white;
-    }
-
-    & span{
-        padding:10px;
-        color:#e11781;
-        font-size: small;
-    }
+    border-bottom: solid 1px #69f0ae;
+    width: 25%;
+  }
 }
 
-.form_button{
-    padding:10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.col {
+  padding: 20px;
+  height: auto;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  border: 1px solid #69f0ae;
+  border-radius: 1em;
+}
+
+.form_input {
+  // border: solid 2px white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  text-align: center;
+
+  & label {
+    padding: 10px;
+    font-size: medium;
+  }
+
+  & input {
+    padding: 5px;
+    width: 25%;
+    height: 20%;
+    border-radius: 5px;
+    background-color: #ffffffc9;
+    border-bottom: solid 1px white;
+  }
+
+  & span {
+    padding: 10px;
+    color: #e11781;
+    font-size: small;
+  }
+}
+
+.form_button {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

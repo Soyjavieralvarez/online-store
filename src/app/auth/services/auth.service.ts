@@ -20,14 +20,14 @@ export class AuthService {
     return {...this._auth!}
   }
 
-  constructor( private hhttp: HttpClient) { }
+  constructor( private http: HttpClient) { }
 
  verifyAuthentication(): Observable<boolean> {
   if (!localStorage.getItem('token')) {
     return of (false) ;
   }
 
-  return this.hhttp.get<Auth>(`${ this.baseURL}/users/1`)
+  return this.http.get<Auth>(`${ this.baseURL}/users/1`)
   .pipe(
     map( auth => {
       this._auth = auth;
@@ -37,7 +37,7 @@ export class AuthService {
  }
 
   login() {
-    return this.hhttp.get<Auth>(`${ this.baseURL}/users/1`)
+    return this.http.get<Auth>(`${ this.baseURL}/users/1`)
     .pipe(
       tap( auth => this._auth = auth),
       tap( auth => localStorage.setItem('token', auth.id)),

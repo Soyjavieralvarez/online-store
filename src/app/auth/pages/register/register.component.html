@@ -1,5 +1,5 @@
 <div class="register_form">
-  <h2>Validaciones reactivas</h2>
+  <h2>Registro de usuario</h2>
   <div class="col">
     <form autocomplete="off" [formGroup]="myForm" (ngSubmit)="submitForm()">
       <!---Name-->
@@ -20,9 +20,8 @@
       <div class="form_input">
         <label class="col-sm-3 col-form-label">Email</label>
         <input type="email" class="form-control" placeholder="User email" formControlName="email" />
-        <span class="form-text text-danger" *ngIf="invalidField('email')">
-            Debes poner un email válido
-          </span>
+        {{emailErrorMsg}}
+
       </div>
 
       <!---Password-->
@@ -48,7 +47,7 @@
         </span>
       </div>
       <div class="form_button">
-        <button mat-stroked-button color="accent" type="submit">Crear</button>
+        <button mat-stroked-button color="accent" type="submit" [disabled]="myForm.pending">Crear</button>
       </div>
 
     </form>

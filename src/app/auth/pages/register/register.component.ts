@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ValidatorService } from '../../../shared/validator/validator.service';
-
-
+import { EmailValidatorService } from 'src/app/shared/validator/email-validator.service';
+import { ValidatorService } from 'src/app/shared/validator/validator.service';
 
 
 @Component({
@@ -21,22 +20,44 @@ export class RegisterComponent implements OnInit {
 
   myForm: FormGroup = this.fb.group({
     name:['', [ Validators.required, Validators.pattern(this.fullNamePattern) ]],
-    email:['', [ Validators.required, Validators.pattern( this.emailPattern )]],
+    email:['', [ Validators.required, Validators.pattern( this.emailPattern )], [this.emailValidator]],
     password:['', [ Validators.required, Validators.minLength(6)]],
     confirmPassword:['', [ Validators.required]]
   },
   //  {
   //   validators: [this.ValidatorService.equalFields('password', 'confirmPassword')]
   // }
-  )
+  );
 
-constructor ( private fb: FormBuilder ) {}
+ 
+
+  get emailErrorMsg(){
+    const caso = Object.keys(this.myForm.get("email")?.errors ?? {})[0];
+    switch(caso){
+    case "":
+      return "";
+    case "required":
+      return "El email es obligatorio";
+    case "pattern":
+      return "El email no es válido";
+    case "unique":
+      return "El email ya está registrado";
+    default:
+      return "Error desconocido con este email";
+    }
+  }
+
+constructor ( private fb: FormBuilder,
+              private validatorService: ValidatorService,
+              private emailValidator: EmailValidatorService ) {}
 
 ngOnInit(): void{
-  this.myForm.reset({
-    name:'Javier Alvarez',
-    email:'javier@javier.com'
-  })
+  // this.myForm.reset({
+  //   name:'Javier Alvarez',
+  //   email:'javier@javier.com',
+  //   password:'123456',
+  //   confirmPassword:'123456'
+  // })
 }
 
 invalidField( field:string ) {
@@ -44,9 +65,13 @@ invalidField( field:string ) {
   && this.myForm.get(field)?.touched
 }
 
+
+
 submitForm() {
   console.log(this.myForm.value);
   this.myForm.markAllAsTouched();
 }
+
+
 
 }
