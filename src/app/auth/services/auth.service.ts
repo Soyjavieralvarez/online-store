@@ -47,4 +47,5 @@ export class AuthService {
   logOut() {
     this._auth = undefined;
   }
+
 }

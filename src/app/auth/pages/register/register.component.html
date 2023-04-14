@@ -28,7 +28,10 @@
       <!---Password-->
       <div class="form_input">
         <label class="col-sm-3 col-form-label">Password</label>
-        <input type="password" class="form-control" placeholder="Password" />
+        <input type="password" class="form-control" placeholder="Password" formControlName="password" />
+        <span class="form-text text-danger" *ngIf="invalidField('password')">
+          La contraseña debe tener mínimo 6 caracteres
+        </span>
       </div>
 
       <!---Password2-->
@@ -37,12 +40,18 @@
         <input
           type="password"
           class="form-control"
+          formControlName="confirmPassword"
           placeholder="Confirm your password"
         />
+        <span class="form-text text-danger" *ngIf="invalidField('confirmPassword')">
+          Las contraseñas deben ser iguales
+        </span>
       </div>
       <div class="form_button">
         <button mat-stroked-button color="accent" type="submit">Crear</button>
       </div>
+
     </form>
-  </div>
 </div>
+</div>
+
