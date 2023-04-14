@@ -44,7 +44,9 @@
             <mat-icon>menu</mat-icon>
         </button>
         <span class="spacer"></span>
-        <button mat-button>
+        <span color="accent">¡Qué bueno verte de nuevo! {{auth.userName}}</span>
+        <button mat-button
+        (click)="logOut()">
             Logout
         </button>
     </mat-toolbar>
