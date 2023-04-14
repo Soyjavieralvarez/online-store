@@ -1,16 +1,27 @@
 <mat-grid-list class="login_mat-grid-list" cols="1">
-    <mat-grid-tile>
+    <div class="profile">
+        <h1>Prueba técnica de Javier Álvarez</h1>
+        <a href="https://www.linkedin.com/in/javier-%C3%A1lvarez-gonz%C3%A1lez/" target="_blank">
+            <img class="img_profile" src="../../../../assets/products/Me-3.png">
+        </a>
+    </div>
+
+    <!-- <mat-grid-tile> -->
         <div class="login">
-        <button mat-raised-button
+        <a href="https://cargoffer.com/" target="_blank">
+        <img class="img_logo" src="../../../../assets/products/Cargoffer-logo-2.png">
+    </a>
+
+        <button class="button_login" mat-raised-button
          color="accent"
          (click)="login()">
             Login
         </button>
-        <button mat-raised-button
+        <button class="button_login" mat-raised-button
          color="warn"
          (click)="loginWithOutId()">
             Ingresar sin login
         </button>
     </div>
-    </mat-grid-tile>
+    <!-- </mat-grid-tile> -->
 </mat-grid-list>
