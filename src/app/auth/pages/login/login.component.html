@@ -1,9 +1,16 @@
-<mat-grid-list cols="1">
+<mat-grid-list class="login_mat-grid-list" cols="1">
     <mat-grid-tile>
+        <div class="login">
         <button mat-raised-button
          color="accent"
          (click)="login()">
             Login
         </button>
+        <button mat-raised-button
+         color="warn"
+         (click)="loginWithOutId()">
+            Ingresar sin login
+        </button>
+    </div>
     </mat-grid-tile>
 </mat-grid-list>

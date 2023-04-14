@@ -23,9 +23,11 @@ export class LoginComponent {
       this.router.navigate(['./products'])
     }
   })
+ }
 
-// this.router.navigate(['./products'])
-
+ loginWithOutId() {
+  this.authService.logOut();
+  this.router.navigate(['./products']);
  }
 
 }
